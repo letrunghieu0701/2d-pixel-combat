@@ -30,7 +30,6 @@ public class EnemyAI : MonoBehaviour
         while (_state == EnemyState.Roaming)
         {
             Vector2 roamPosition = GetRoamingPosition();
-            Debug.Log(roamPosition);
             _movement.SetMoveDirection(roamPosition);
             yield return new WaitForSeconds(2f);
         }
