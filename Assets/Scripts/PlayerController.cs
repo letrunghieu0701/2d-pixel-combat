@@ -13,6 +13,11 @@ public class PlayerController : MonoBehaviour
     private Animator _animator;
     private SpriteRenderer _spriteRenderer;
 
+    private bool _isFacingLeft;
+    public bool IsFacingLeft
+    {
+        get { return _isFacingLeft; }
+    }
     private void Awake()
     {
         _playerControllers = new PlayerControllers();
@@ -58,7 +63,7 @@ public class PlayerController : MonoBehaviour
     private void AdjustFacingDirection()
     {
         Vector3 playerScreenPoint = Camera.main.WorldToScreenPoint(_rigidbody.position);
-        bool isFlipLeftSide = Input.mousePosition.x < playerScreenPoint.x;
-        _spriteRenderer.flipX = isFlipLeftSide;
+        _isFacingLeft = Input.mousePosition.x < playerScreenPoint.x;
+        _spriteRenderer.flipX = _isFacingLeft;
     }
 }
