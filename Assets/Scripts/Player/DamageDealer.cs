@@ -4,11 +4,13 @@ using UnityEngine;
 
 public class DamageDealer : MonoBehaviour
 {
+    [SerializeField] private int _damage = 1;
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.GetComponent<EnemyAI>())
+        if (collision.gameObject.TryGetComponent<EnemyHealth>(out EnemyHealth enemyHealth))
         {
-            Debug.Log("Hit enemy");
+            enemyHealth.TakeDamage(_damage);
         }
     }
 }
