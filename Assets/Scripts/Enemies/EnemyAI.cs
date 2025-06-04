@@ -12,7 +12,8 @@ public class EnemyAI : MonoBehaviour
 
     private EnemyState _state;
     private EnemyMovement _movement;
-    private float _moveSpeed;
+
+    [SerializeField] private float _changeRoamDirectionInterval = 2f;
 
     private void Awake()
     {
@@ -31,7 +32,7 @@ public class EnemyAI : MonoBehaviour
         {
             Vector2 roamPosition = GetRoamingPosition();
             _movement.SetMoveDirection(roamPosition);
-            yield return new WaitForSeconds(2f);
+            yield return new WaitForSeconds(_changeRoamDirectionInterval);
         }
     }
 
