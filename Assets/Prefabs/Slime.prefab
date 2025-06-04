@@ -191,8 +191,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a222e1c302e73146a49b2f40b0053f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _healthPoint: 10
-  _knockBackForce: 10
+  _healthPoint: 5
+  _knockBackForce: 2
+  _deathVFX: {fileID: 8494353608927672316, guid: 77a9e0123549290428ad0e9a00c5a3d9, type: 3}
 --- !u!114 &1072911522207531668
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -205,7 +206,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81798c8654c9d24479081302963951bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _knockBackTime: 0.2
+  _knockBackTime: 0
 --- !u!114 &2978601005091766512
 MonoBehaviour:
   m_ObjectHideFlags: 0

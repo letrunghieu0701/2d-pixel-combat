@@ -797,7 +797,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 329984377370458659, guid: 0c94326accb6c4a46a26d36e719d8773, type: 3}
       propertyPath: _healthPoint
-      value: 100
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 329984377370458659, guid: 0c94326accb6c4a46a26d36e719d8773, type: 3}
       propertyPath: _knockBackForce
@@ -1715,7 +1715,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 329984377370458659, guid: 0c94326accb6c4a46a26d36e719d8773, type: 3}
       propertyPath: _healthPoint
-      value: 100
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 329984377370458659, guid: 0c94326accb6c4a46a26d36e719d8773, type: 3}
       propertyPath: _knockBackForce
@@ -2090,7 +2090,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 329984377370458659, guid: 0c94326accb6c4a46a26d36e719d8773, type: 3}
       propertyPath: _healthPoint
-      value: 100
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 329984377370458659, guid: 0c94326accb6c4a46a26d36e719d8773, type: 3}
       propertyPath: _knockBackForce
@@ -2268,12 +2268,20 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 329984377370458659, guid: 0c94326accb6c4a46a26d36e719d8773, type: 3}
+      propertyPath: _deathVFX
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 329984377370458659, guid: 0c94326accb6c4a46a26d36e719d8773, type: 3}
       propertyPath: _healthPoint
-      value: 100
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 329984377370458659, guid: 0c94326accb6c4a46a26d36e719d8773, type: 3}
       propertyPath: _knockBackForce
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1072911522207531668, guid: 0c94326accb6c4a46a26d36e719d8773, type: 3}
+      propertyPath: _knockBackTime
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3054844468234394227, guid: 0c94326accb6c4a46a26d36e719d8773, type: 3}
       propertyPath: m_Name

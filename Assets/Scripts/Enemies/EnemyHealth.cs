@@ -9,6 +9,8 @@ public class EnemyHealth : MonoBehaviour
     private KnockBack _knockBack;
     private FlashWhiteEffect _flashWhiteEffect;
 
+    [SerializeField] private GameObject _deathVFX;
+
     private void Awake()
     {
         _knockBack = GetComponent<KnockBack>();
@@ -41,6 +43,7 @@ public class EnemyHealth : MonoBehaviour
             return;
         }
 
+        Instantiate(_deathVFX, transform.position, Quaternion.identity); // To-do: add object pooling
         Destroy(this.gameObject);
     }
 }
