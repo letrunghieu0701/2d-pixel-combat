@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -13,6 +14,8 @@ public class Sword : MonoBehaviour
     private SpriteRenderer _slashEffectRenderer;
 
     private GameObject _damageCollider;
+
+    private bool _isAttackButtonDown, _isAttacking = false;
 
     private void Awake()
     {
@@ -31,12 +34,13 @@ public class Sword : MonoBehaviour
 
     private void Start()
     {
-        _playerControllers.Combat.Attack.started += _ => Attack();
+        _playerControllers.Combat.Attack.started += _ => StartAttacking();
+        _playerControllers.Combat.Attack.canceled += _ => StopAttacking();
     }
 
     private void Update()
     {
-        
+        Attack();
     }
 
     private void FixedUpdate()
@@ -49,8 +53,29 @@ public class Sword : MonoBehaviour
         _playerControllers.Enable();
     }
 
+    private void StartAttacking()
+    {
+        _isAttackButtonDown = true;
+    }
+
+    private void StopAttacking()
+    {
+        _isAttackButtonDown = false;
+    }
+
     private void Attack()
     {
+        if (!_isAttackButtonDown)
+        {
+            return;
+        }
+
+        if (_isAttacking)
+        {
+            return;
+        }
+
+        _isAttacking = true;
         _animator.SetTrigger("Attack");
         _damageCollider.SetActive(true);
     }
@@ -82,5 +107,6 @@ public class Sword : MonoBehaviour
     public void FinishAttackingAnimEvent()
     {
         _damageCollider.SetActive(false);
+        _isAttacking = false;
     }
 }
